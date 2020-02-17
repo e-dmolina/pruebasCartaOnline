@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class ProductosService {
 
   URL = 'https://laesquinaelmejorsabor.com/api';
-  URL_DEV = 'http://localhost:3000/api'
+  URL_DEV = 'http://54.233.233.87:3000/api'
 
   constructor(private http: HttpClient) { }
 
