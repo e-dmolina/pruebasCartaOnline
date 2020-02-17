@@ -1,0 +1,127 @@
+<!--nav bar-->
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-dark"
+>
+  <a class="navbar-brand" href="#">
+    <img
+      src="../../../assets/img/image287.png"
+      width="60"
+      height="50"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    Carta online
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#Pizzas">Pizzas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Empanadas">Empanadas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Lomos">Lomos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Hamburguesas y Sandwichs"
+          >Hamburguesas y Sandwichs</a
+        >
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Papas">Papas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Pollos a la Parrilla"
+          >Pollos a la Parrilla</a
+        >
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Menus">Menus</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Bebidas">Bebidas</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Fin de navbar -->
+
+<!-- Galería de Productos -->
+<div class="card-columns animated fadeIn">
+  <div class="card" *ngFor="let cat of categorias">
+    <a name="{{ cat.nombre }}"></a>
+    <img [src]="cat.img" class="card-img-top" alt="{{ cat.nombre }}" />
+    <div class="card-body">
+      <h5 class="card-title">
+        <b>{{ cat.nombre }}</b>
+      </h5>
+      <div
+        class="row"
+        *ngIf="cat.nombre == 'Pizzas' || cat.nombre == 'Empanadas'"
+      >
+        <!-- <div class="col-6"></div>
+        <div class="col-3"><b>Entera</b></div> -->
+        <!-- <div class="col-3"><b>Media</b></div> -->
+      </div>
+      <div class="card-row" *ngFor="let item of productos">
+        <div *ngIf="cat.nombre == item.categoria">
+          <div class="row">
+            <div class="col-9">
+              <li>{{ item.nombre }}</li>
+              <li><small class="text-muted">{{ item.precioMitad }}</small></li>
+            </div>
+            <div class="col-3">
+              <li style="color: red;">${{ item.precioCompleto }}</li>
+            </div>
+            <!-- <div class="col-3">
+              <li>{{ item.precioMitad }}</li>
+            </div> -->
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin de Galería de Productos -->
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark indigo pt-4 animated fadeIn">
+  <div class="container text-center">
+    <div class="container text-center">
+      <!-- Hace tu pedido al: <i class="fas fa-phone"> 4463038</i> -->
+       <p> Hace tu pedido</p>
+      <button class="btn btn-primary">
+        por <a href="tel:+543512655443"><i class="fas fa-phone"> Teléfono</i></a>
+      </button>
+      <p>o</p>
+      <button class="btn btn-success">
+        por <a href="https://wa.me/+543512655443"> <i class="fab fa-whatsapp font-weight-bold"> Whatsapp</i> </a>
+      </button>
+    </div>
+    <br />
+
+    <!-- Footer Saludo -->
+    <div class="text-center">
+      <h5>Recibimos todas las tarjetas!</h5>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+      © 2019 Copyright:
+      <a href="">DY</a>
+    </div>
+  </div>
+</footer>

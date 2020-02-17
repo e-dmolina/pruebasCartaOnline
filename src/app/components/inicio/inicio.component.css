@@ -1,0 +1,12 @@
+li{
+    list-style: none;
+}
+
+footer{
+    /* background:#d61111; */
+    color: aliceblue;
+}
+
+footer a{
+    color: aliceblue;
+}

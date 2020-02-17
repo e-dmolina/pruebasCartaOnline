@@ -1,0 +1,23 @@
+
+.fondo{
+    background: rgb(124, 175, 158);
+    background-size: cover; 
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container{
+    max-width: 500px;
+}
+.contact-form{
+    background-color: rgba(0, 0, 0, .6);
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px 3px grey;
+}
+
+hr{
+    background-color: white;
+}

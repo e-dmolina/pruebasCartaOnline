@@ -1,0 +1,58 @@
+<div class="container mt-5">
+    <h1>Producto</h1>
+    <hr>
+
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" routerLink="/productos">
+                <i class="fa fa-arrow-left"></i>
+                Volver
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <form #f="ngForm" (ngSubmit)="guardar(f)">
+                <!-- <div class="form-group">
+                    <label for="">ID</label>
+                    <input type="text" class="form-control" disabled 
+                           name="id" [(ngModel)]="producto.id">
+                    <small class="form-text text-muted">Este campo es autogenerado</small>
+                </div> -->
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" class="form-control" required 
+                           name="nombre" [(ngModel)]="producto.nombre" 
+                           placeholder="Nombre del producto">
+                </div>
+                <div class="form-group">
+                    <label for="">Precio Completo</label>
+                    <input type="text" class="form-control" required 
+                           name="precioCompleto" [(ngModel)]="producto.precioCompleto"  
+                           placeholder="Precio del producto entero">
+                </div>
+                <div class="form-group">
+                    <label for="">Descripción</label>
+                    <input type="text" class="form-control" 
+                           name="precioMitad" [(ngModel)]="producto.precioMitad"  
+                           placeholder="Precio de la mitad del producto">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Categoría</label>
+                    <select class="form-control" name="categoria" [(ngModel)]="producto.categoria" 
+                             id="exampleFormControlSelect1" required>
+                        <option *ngFor="let item of categorias" [value]="item.nombre">{{item.nombre}}</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary w-25" [disabled]="!f.valid">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
