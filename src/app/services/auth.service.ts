@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private url = 'http://localhost:3000/api/login';
+  private url = 'http://54.233.233.87:3000/api/login';
   userToken:string;
 
   constructor( private http:HttpClient ) {
